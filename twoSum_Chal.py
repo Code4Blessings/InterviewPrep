@@ -16,7 +16,6 @@ return [0, 1].
 
 class Solution:
     def twoSum(self, nums, target):
-        pass
         # If the sum of the value of 2 indices, in a list, equal the target, return the  two indices in a list
         # 1. Iterate over the list
         # 2. Need 2 loops i & j--0(n^2)--Will need to optimize later
@@ -46,6 +45,13 @@ class Solution:
         #This is what I am looking for:
         #Given the array from above, su
 
+        checkSum = {}
+        for i, x in enumerate(nums):
+            match_index = target - x
+            if match_index not in checkSum:
+                checkSum[x] = i
+            else:
+                return [checkSum[match_index], i]
 
 
         #Brute force
